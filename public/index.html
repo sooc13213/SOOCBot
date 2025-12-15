@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alperen Doğan">
+  <meta name="description" content="ChatGPT tabanlı custom yapay zeka modeli.">
+  <meta name="keywords" content="chatbot, chat, bot, openai, api, gpt, node, html, css, javascript">
+  <title>SOOCBot</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png"> 
+</head>
+<body>
+  <div class="chat-container">
+  <div>
+    <div class="credits" onclick="openCredits()">
+    <a href="assets/img.png" target="_blank">Resmi Aç</a>
+    </div>
+    
+  </div>
+    <div class="chat-title">SOOCBot</div>
+    <div class="chat-body" id="chat-body">
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="user-input" placeholder="Mesajınızı buraya yazın..." />
+      <button id="send-button">Gönder</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
