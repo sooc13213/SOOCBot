@@ -14,7 +14,7 @@
   --radius: 16px;
 }
 
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +37,7 @@ body {
   flex-direction: column;
 }
 
-/* CREDITS */
+
 .credits {
   position: absolute;
   top: 12px;
@@ -58,7 +58,7 @@ body {
   background: #2a3942;
 }
 
-/* TITLE */
+
 .chat-title {
   background: linear-gradient(180deg, #1f2c33, #162329);
   padding: 14px;
@@ -82,7 +82,7 @@ body {
     radial-gradient(circle at top, #0f1f26, #05090d);
 }
 
-/* MESSAGE BASE */
+
 .chat-body p {
   max-width: 78%;
   padding: 12px 16px;
@@ -93,7 +93,7 @@ body {
   word-wrap: break-word;
 }
 
-/* BOT MESSAGE */
+
 .chat-body .chatbot-message {
   align-self: flex-start;
   background: var(--bot-msg);
@@ -113,7 +113,7 @@ body {
   transform: rotate(45deg);
 }
 
-/* USER MESSAGE */
+
 .chat-body .user-message {
   align-self: flex-end;
   background: var(--user-msg);
@@ -133,7 +133,7 @@ body {
   transform: rotate(45deg);
 }
 
-/* FOOTER */
+
 .chat-footer {
   padding: 12px;
   background: linear-gradient(180deg, #1f2c33, #162329);
@@ -142,7 +142,7 @@ body {
   border-top: 1px solid rgba(255,255,255,.05);
 }
 
-/* INPUT */
+
 #user-input {
   flex: 1;
   background: #2a3942;
@@ -195,5 +195,78 @@ body {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+  body {
+    height: 100dvh;
+  }
+
+  .chat-container {
+    height: 100dvh;
+    width: 100vw;
+  }
+
+  .chat-title {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .chat-body {
+    padding: 12px 10px;
+  }
+
+  .chat-body p {
+    max-width: 85%;
+    font-size: 14px;
+  }
+
+  .chat-footer {
+    padding: 10px;
+    gap: 8px;
+
+    /* iOS safe area */
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+
+  #user-input {
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+
+  #send-button {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .credits {
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+
+  body {
+    height: 100dvh;
+  }
+
+  .chat-container {
+    min-height: 100dvh;
+  }
+
+  .chat-footer {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(180deg, #1f2c33, #162329);
   }
 }
