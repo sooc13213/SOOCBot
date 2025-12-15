@@ -17,6 +17,5 @@
   "author": "AlperenDoğan, Sabrihan Akar, Soner Seçkin Yildirim.",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^3.1.11"
   }
 }
