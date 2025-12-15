@@ -1,21 +1,19 @@
 {
+  "name": "sooc-adrenobot",
+  "version": "1.0.0",
+  "description": "SOOC OpenAI tabanlı sohbet botu",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js",
+    "start": "node app.js"
+  },
+  "author": "Alperen Doğan, Sabrihan Akar, Soner Seçkin Yıldırım",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.5",
     "express": "^4.22.1",
     "openai": "^6.10.0"
-  },
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
-  },
-  "name": "chat_bot",
-  "version": "1.0.0",
-  "description": "SOOC AdrenoBot",
-  "main": "app.js",
-  "author": "AlperenDoğan, Sabrihan Akar, Soner Seçkin Yildirim.",
-  "license": "MIT",
-  "devDependencies": {
   }
 }
