@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --bg: #0b0f19;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.15);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --glow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #111827, var(--bg));
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* === MAIN CONTAINER === */
+.credits-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 20px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* === CARD === */
+.credits-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+/* animated glow */
+.credits-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.15;
+  animation: rotateGlow 6s linear infinite;
+}
+
+/* === TITLE === */
+.credits-title {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: var(--glow);
+}
+
+.credits-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+/* === CREDIT LIST === */
+.credit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.credit-item.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.credit-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.credit-role {
+  font-weight: 600;
+}
+
+.credit-name {
+  color: var(--accent);
+}
+
+/* === FOOTER === */
+.credits-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* === BUTTON === */
+.back-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
