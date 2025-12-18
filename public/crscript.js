@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* mouse parallax effect */
+
 document.addEventListener("mousemove", (e) => {
   const card = document.querySelector(".credits-card");
   if (!card) return;
@@ -18,3 +18,4 @@ document.addEventListener("mousemove", (e) => {
 
   card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
+
