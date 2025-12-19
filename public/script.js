@@ -97,5 +97,6 @@ userInput.addEventListener("keydown", (e) => {
 });
 
 
-addBotMessage("Merhaba selim iyi günler oc");
+addBotMessage("Merhaba 👋 ben sooc-bot size nasıl yardımcı olabilirim?");
+
 
