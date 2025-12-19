@@ -97,4 +97,5 @@ userInput.addEventListener("keydown", (e) => {
 });
 
 
-addBotMessage("Merhaba 👋 Ben SOOCBot. Size nasıl yardımcı olabilirim?");
+addBotMessage("Merhaba selim iyi günler oc");
+
