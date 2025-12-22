@@ -95,66 +95,6 @@ userInput.addEventListener("keydown", (e) => {
     sendMessage();
   }
 });
-// SpeechRecognition setup
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-let recognition;
-let recognizing = false;
-
-if (SpeechRecognition) {
-    recognition = new SpeechRecognition();
-    recognition.lang = 'tr-TR'; // Türkçe konuşma için
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        console.log('Tanınan metin:', transcript);
-        document.getElementById('chat-input').value = transcript;
-        
-        // Burada mevcut chat gönderme fonksiyonunu tetikle
-        sendMessage(transcript);
-    };
-    
-    recognition.onerror = (event) => {
-        console.error('Speech recognition error', event.error);
-    };
-
-    recognition.onend = () => {
-        recognizing = false;
-        document.getElementById('mic-btn').textContent = "🎤 Başlat";
-    };
-} else {
-    alert("Ses tanıma bu tarayıcıda desteklenmiyor.");
-}
-
-document.getElementById('mic-btn').addEventListener('click', () => {
-    if (!recognizing) {
-        recognition.start();
-        recognizing = true;
-        document.getElementById('mic-btn').textContent = "🛑 Durdur";
-    } else {
-        recognition.stop();
-    }
-});
-
-function sendMessage(message) {
-    fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ text: message })
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log("Bot cevabı:", data.reply);
-        // UI’ı güncelle
-    })
-    .catch(err => console.error(err));
-}
 
 
 addBotMessage("Merhaba 👋 ben sooc-bot size nasıl yardımcı olabilirim?");
-
-
-
