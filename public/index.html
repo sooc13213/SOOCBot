@@ -11,21 +11,32 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.png"> 
 </head>
 <body>
+
   <div class="chat-container">
-  <div>
-    <div class="credits" onclick="openCredits()">
-    <a href="Credits.html" target="">Credits</a>
+    <div>
+      <div class="credits" onclick="openCredits()">
+        <a href="Credits.html">Credits</a>
+      </div>
     </div>
-    
-  </div>
+
     <div class="chat-title">SOOCBot</div>
-    <div class="chat-body" id="chat-body">
-    </div>
+
+    <div class="chat-body" id="chat-body"></div>
+
     <div class="chat-footer">
-      <input type="text" id="user-input" placeholder="Mesajınızı buraya yazın..." />
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Mesajınızı buraya yazın..." 
+      />
+
+
+      <button id="mic-button" title="Sesle konuş">🎤</button>
+
       <button id="send-button">Gönder</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
