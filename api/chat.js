@@ -1,5 +1,44 @@
 import OpenAI from "openai";
 
+const STATIC_REPLIES = [
+  {
+    triggers: ["seni kim geliştirdi", "seni kim yaptı", "seni kim yazdı"],
+    reply: "Ben SOOC projesiyim."
+  },
+  {
+    triggers: ["adın ne", "kimsin"],
+    reply: "Ben SOOCBot’um."
+  },
+  {
+    triggers: ["chatgpt misin"],
+    reply: "Hayır, ben SOOC projesine ait özel bir chatbotum."
+  },
+  {
+    triggers: ["versiyon", "sürüm"],
+    reply: "SOOCBot v1.0"
+  },
+  {
+    triggers: ["yardım", "help"],
+    reply: "Sorularını yazabilirsin. Kod, teknik ve genel konularda yardımcı olurum."
+  }
+];
+
+function getStaticReply(message) {
+  const text = message.toLowerCase();
+
+  for (const item of STATIC_REPLIES) {
+    for (const trigger of item.triggers) {
+      if (text.includes(trigger)) {
+        return item.reply;
+      }
+    }
+  }
+
+  return null;
+}
+
+
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -16,6 +55,12 @@ export default async function handler(req, res) {
   try {
     const { message } = req.body;
 
+    const staticReply = getStaticReply(message);
+      if (staticReply) {
+      return res.status(200).json({ message: staticReply });
+}
+
+    
     if (!message || typeof message !== "string") {
       return res.status(400).json({
         message: "Geçersiz mesaj",
