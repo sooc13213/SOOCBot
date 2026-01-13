@@ -3,7 +3,7 @@ import OpenAI from "openai";
 const STATIC_REPLIES = [
   {
     triggers: ["seni kim geliştirdi", "seni kim yaptı", "seni kim yazdı"],
-    reply: "Ben SOOC projesiyim."
+    reply: "Ben SOOC projesiyim. Alperen Doğan tarafından geliştirildim. "
   },
   {
     triggers: ["adın ne", "kimsin"],
@@ -20,6 +20,26 @@ const STATIC_REPLIES = [
   {
     triggers: ["yardım", "help"],
     reply: "Sorularını yazabilirsin. Kod, teknik ve genel konularda yardımcı olurum."
+  },
+  {
+    triggers: ["Senden Sorumlu Öğretmen", "Bilişim Öğretmeni", "bilişim ögretmeni"],
+    reply: "Benden sorumlu öğretmen 100 yılın bilişimcisi RIDOMANGO."
+  },
+  {
+    triggers: ["Seçil Hoca Kimdir", "seçil hoca kimdir"],
+    reply: "Seçil Arıcıoğlu kendisi ortadoğu ve balkanların en mükemmel öğretmenidir."
+  },
+  {
+    triggers: ["deniz hoca kimdir", "Deniz hoca kimdir", "Deniz Hoca Kimdir"],
+    reply: "Kendisi çok kral bir hocadır o7."
+  },
+  {
+    triggers: ["Pakize Hoca Kimdir", "pakize hoca kimdir", "pakize aka kimdir"],
+    reply: "Kendisi evrenin en iyi almacıcısıdır, almanca sevmeyenide ne bileyim artık."
+  },
+  {
+    triggers: ["Rıdvan Hoca kimdir", "rıdvan hoca kimdir", "Rıdvan hoca kimdir"],
+    reply: "Kendisi çok kral bir hocadır o7."
   }
 ];
 
